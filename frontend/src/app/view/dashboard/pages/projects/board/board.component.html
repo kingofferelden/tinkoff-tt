@@ -1,0 +1,44 @@
+<div [class.is-row]="layoutType === 'row'"
+     [fxLayout]="layoutType"
+     cdkDropListGroup
+     class="column-list"
+     fxLayoutAlign="space-between center">
+
+    <div (cdkDropListDropped)="drop($event, taskType.TODO)" [cdkDropListData]="todo" cdkDropList class="column">
+        <div class="type-header">Todo</div>
+
+        <mat-card (dblclick)="open(item)" *ngFor="let item of todo" [cdkDragData]="item" cdkDrag class="column-item column-item__todo">
+            <p class="card-header">{{item.name}}</p>
+            <p class="card-text">{{item.description}}</p>
+        </mat-card>
+    </div>
+
+    <div (cdkDropListDropped)="drop($event, taskType.IN_PROGRESS)" [cdkDropListData]="inProgress" cdkDropList
+         class="column">
+       <div class="type-header">In progress</div>
+
+        <mat-card (dblclick)="open(item)" *ngFor="let item of inProgress" [cdkDragData]="item" cdkDrag
+                  class="column-item column-item__in-progress">
+            <p class="card-header">{{item.name}}</p>
+            <p class="card-text">{{item.description}}</p>
+        </mat-card>
+    </div>
+
+    <div (cdkDropListDropped)="drop($event, taskType.TESTING)" [cdkDropListData]="testing" cdkDropList class="column">
+        <div class="type-header">Testing</div>
+
+        <mat-card (dblclick)="open(item)" *ngFor="let item of testing" [cdkDragData]="item" cdkDrag class="column-item column-item__testing">
+            <p class="card-header">{{item.name}}</p>
+            <p class="card-text">{{item.description}}</p>
+        </mat-card>
+    </div>
+
+    <div (cdkDropListDropped)="drop($event, taskType.DONE)" [cdkDropListData]="done" cdkDropList class="column">
+        <div class="type-header">Done</div>
+
+        <mat-card (dblclick)="open(item)" *ngFor="let item of done" [cdkDragData]="item" cdkDrag class="column-item column-item__done">
+            <p class="card-header">{{item.name}}</p>
+            <p class="card-text">{{item.description}}</p>
+        </mat-card>
+    </div>
+</div>

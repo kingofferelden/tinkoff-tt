@@ -1,0 +1,61 @@
+<form [formGroup]="form">
+
+    <div class="view-header">
+        <mat-toolbar class="toolbar">{{title}}</mat-toolbar>
+
+        <ng-container *ngIf="isEditable">
+            <button (click)="delete.emit(form.get('id').value)" class="material-icons buttons">delete</button>
+            <button class="material-icons buttons" (click)="setEditableMode()">edit</button>
+        </ng-container>
+    </div>
+
+    <div class="task-form" fxLayout="column">
+
+        <mat-form-field>
+            <input formControlName="name" matInput placeholder="Название задачи">
+        </mat-form-field>
+
+        <mat-form-field>
+            <textarea formControlName="description" matInput placeholder="Описание задачи"></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input [matDatepicker]="startDate" formControlName="startDate" matInput placeholder="Время заведения">
+            <mat-datepicker-toggle [for]="startDate" matSuffix></mat-datepicker-toggle>
+            <mat-datepicker #startDate></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input [matDatepicker]="dueDate" formControlName="dueDate" matInput placeholder="Дедлайн">
+            <mat-datepicker-toggle [for]="dueDate" matSuffix></mat-datepicker-toggle>
+            <mat-datepicker #dueDate></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-select formControlName="priority" placeholder="Приоритет">
+                <mat-option value="High">Высокий</mat-option>
+                <mat-option value="Medium">Средний</mat-option>
+                <mat-option value="Low">Низкий</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-select formControlName="type" placeholder="Этап">
+                <mat-option value="TODO">To do</mat-option>
+                <mat-option value="IN_PROGRESS">In progress</mat-option>
+                <mat-option value="TESTING">Testing</mat-option>
+                <mat-option value="DONE">Done</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input formControlName="assigned" matInput placeholder="На кого назначить задачу?">
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="reporter" matInput placeholder="Кто завел задачу">
+        </mat-form-field>
+    </div>
+
+</form>
+
+<button *ngIf="canSave" (click)="save.emit()" [disabled]="form.invalid" mat-button>Сохранить</button>

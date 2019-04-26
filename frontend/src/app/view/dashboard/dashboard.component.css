@@ -1,0 +1,19 @@
+.dashboard {
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.dashboard__menu {
+    color: #333333;
+    width: 125px;
+    transition: 0.25s;
+    box-shadow: 1px 2px 15px 0 rgba(0,0,0,.15);
+}
+
+.dashboard__menu:hover {
+    width: 200px;
+}
+
+* {
+    font-weight: 300;
+}

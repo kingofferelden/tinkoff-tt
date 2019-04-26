@@ -1,0 +1,32 @@
+.task-form {
+    width: 500px;
+}
+
+.buttons {
+    background-color: #FADD56;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    margin: 5px;
+}
+
+.view-header {
+    display: flex;
+}
+
+.toolbar {
+    padding: 0 0 15px 0;
+}
+
+.view-header:hover button {
+    opacity: 1;
+}
+
+.view-header button {
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+.view-header button {
+    cursor: pointer;
+}

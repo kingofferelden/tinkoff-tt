@@ -1,0 +1,15 @@
+<mat-toolbar class="title"><img class="logo" src="https://static2.tinkoff.ru/portal/tinkoffbank-general-logo/tinkoff-bank-general-logo-9.png"></mat-toolbar>
+
+<app-add-project></app-add-project>
+
+<mat-list class="menu" *ngFor="let project of store.project$ | async">
+  <mat-divider></mat-divider>
+  <mat-list-item class="menu__item">
+    <a [routerLink]="[ 'projects', project.id, 'name', project.name ]">{{project.name}}</a>
+    <button mat-icon-button>
+      <mat-icon class="material-icons delete-project" (click)="deleteProject(project.id)">clear</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>
+
+<button class="logout" (click)="logout()">Выйти</button>

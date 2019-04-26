@@ -1,0 +1,52 @@
+.title {
+    background: transparent;
+}
+
+.menu__item a {
+    text-decoration: none;
+    color: #333333;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    padding: 0 16px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.menu__item:hover {
+    background-color: #DDDFE0;
+    transition: 0.25s;
+}
+
+.logo {
+    width: 75px;
+    display: block;
+    margin: 20px auto 0 auto;
+}
+
+.mat-list-base {
+    padding: 0 !important;
+}
+
+.menu .mat-list-item .mat-list-item-content {
+    padding: 0 !important;
+}
+
+.delete-project {
+    color: #333333;
+    opacity: 0;
+}
+
+.menu__item:hover .delete-project {
+    opacity: 1;
+}
+
+.logout {
+    display: block;
+    margin-left: 16px;
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+}

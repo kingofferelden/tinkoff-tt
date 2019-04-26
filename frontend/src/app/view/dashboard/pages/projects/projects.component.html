@@ -1,0 +1,38 @@
+<div class="board-content">
+    <mat-toolbar class="toolbar">Наименование проекта: {{ name }}</mat-toolbar>
+    <div class="board-panel">
+        <mat-slide-toggle
+                class="toggle-list"
+                (change)="checked = $event.checked"
+                [checked]="checked">
+            List / Board
+        </mat-slide-toggle>
+
+        <button mat-mini-fab class="create-task" (click)="createTask()">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+    <app-board
+            (dropped)="onDrop($event)"
+            *ngIf="checked; else listTable"
+            [@fadeIn]
+            [done]="done"
+            [inProgress]="inProgress"
+            [testing]="testing"
+            [todo]="todo"
+            layoutType="row">
+    </app-board>
+
+    <ng-template #listTable>
+        <app-board
+                (dropped)="onDrop($event)"
+                [@fadeIn]
+                [done]="done"
+                [inProgress]="inProgress"
+                [testing]="testing"
+                [todo]="todo"
+                layoutType="column">
+        </app-board>
+    </ng-template>
+
+</div>

@@ -1,0 +1,10 @@
+.add-button {
+    margin: 25px 10px 10px 10px;
+    display: block;
+    padding: 5px 0;
+    background-color: #FADD56;
+    border-radius: 5px;
+    border: none;
+    width: calc(100% - 20px);
+    cursor: pointer;
+}

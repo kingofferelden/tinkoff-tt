@@ -1,0 +1,25 @@
+.auth-card {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    margin: 100px auto;
+    flex-direction: column;
+}
+
+.log-in {
+    width: 100%;
+    background-color: transparent !important;
+}
+
+.log-in__tab {
+    position: relative;
+}
+.auth-button {
+    background-color: #FADD56;
+    font-weight: 300;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar {
+    background-color: #FADD56;
+    font-weight: 300;
+}

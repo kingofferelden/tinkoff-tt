@@ -1,0 +1,48 @@
+.column-list {
+    height: 90%;
+}
+
+.column-list.is-row .column {
+    margin-right: 50px;
+}
+
+.column-list:not(.is-row) .column {
+    margin-top: 15px;
+    margin-bottom: 35px;
+}
+
+.column {
+    height: calc(100% - 100px);
+    background-color: #eff1f3;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 3px;
+}
+
+.column-item {
+    margin: 20px 0;
+    height: 50px;
+    white-space: nowrap;
+    overflow: hidden
+}
+
+.column-list.is-row .column:last-child {
+    margin-right: 0;
+}
+
+.type-header {
+    text-decoration: #FADD56 underline;
+    border-radius: 3px;
+    background-color: #ffffff;
+    padding: inherit;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+
+.card-text {
+    font-weight: 300;
+    font-size: 14px;
+}
+
